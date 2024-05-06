@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #metin{
+        width: 500px;
+        height: 100px;
+    }
+    button{
+        background-color: rgb(15, 43, 26); 
+        color: #ffff; 
+        height: 50px;
+        border-radius: 15px;
+        width: 200px;
+        cursor: pointer;
+    }
+    
+</style>
+<body>
+    <div>
+        <label>Text :</label>
+        <input type="text" id="metin">
+        <br/>
+        <button onclick="analiz()">Analiz</button>
+        <br/>
+        
+         <p id="toplamKelime"></p>
+         <p id="toplamKarakter"></p>
+         <p id="toplamCümle"></p>
+        
+    </div>
+    
+</body>
+
+<script>
+    function analiz(){
+        var boslukSayisi = 0;
+        var cumleSayisi = 0;
+        var karakterSayisi = 0;
+        let marks = /[.,;:!?(){}[\]]/;
+
+        var metin = document.getElementById('metin').value;
+
+        let checkMarks = metin.match(marks)
+        var toplamKelime=0
+        if (metin != "") {
+            for(i = 0; i < metin.length; i++){
+            if(metin[i] == " "){
+                boslukSayisi++
+            }
+            if(metin[i] == "." || metin[i] == "!" || metin[i] == '?'){
+                cumleSayisi++
+            }
+            
+        }
+        toplamKelime+=1
+        }
+        else{
+            alert("Lütfen metin kutusunu boş bırakmayınız")
+        }
+        
+        toplamKelime += boslukSayisi 
+        var toplamKarakter = metin.length 
+        
+        document.getElementById("toplamKelime").innerHTML = "Toplam Kelime Sayısı :"+toplamKelime
+        document.getElementById("toplamKarakter").innerHTML = "Toplam Karakter Sayısı :"+toplamKarakter
+        document.getElementById("toplamCümle").innerHTML = "Toplam Cümle Sayısı :"+cumleSayisi
+    }
+
+</script>
+
+</html>

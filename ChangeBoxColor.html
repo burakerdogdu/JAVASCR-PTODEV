@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 30px;
+    }
+    #box1{
+        width: 350px;
+        height: 350px;
+        border: 3px solid;
+        margin-bottom: 20px;
+
+    }
+    #box2{
+        width: 350px;
+        height: 350px;
+        border: 3px solid;
+        margin-bottom: 20px;
+
+    }
+    #box3{
+        width: 350px;
+        height: 350px;
+        border: 3px solid;
+        margin-bottom: 20px;
+    }
+    
+</style>
+<body>
+    <div class="main">
+        <div>
+            <div id="box1"></div>
+            <input type="text" id="color1" />
+            <button onclick="box1()">Color Change</button>
+        </div>
+        <div>
+            <div id="box2"></div>
+            <input type="text" id="color2"/>
+            <button onclick="box2()">Color Change</button>
+        </div>
+        <div>
+            <div id="box3"></div>
+            <input type="text" id="color3"/>
+            <button onclick="box3()">Color Change</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    function box1(){
+        var changedColor = document.getElementById("color1").value
+        document.getElementById('box1').style.backgroundColor = changedColor
+    }
+    function box2(){
+        var changedColor = document.getElementById("color2").value
+        document.getElementById('box2').style.backgroundColor = changedColor
+    }
+    function box3(){
+        var changedColor = document.getElementById("color3").value
+        document.getElementById('box3').style.backgroundColor = changedColor
+    }
+</script>
+
+</html>
